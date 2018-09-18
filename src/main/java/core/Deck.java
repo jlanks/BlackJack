@@ -1,14 +1,18 @@
 package core;
 
 
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.Random;
  
 
 public class Deck {
 
 	private LinkedList<Card> Cards = new LinkedList<Card>() ; 
 	
+	// constructors
 	
+	public Deck() {this(false); }
 	public Deck(boolean shuff) {
 		
 		// loops through suits
@@ -22,8 +26,19 @@ public class Deck {
 					
 				 }
 				
-				if(shuff) {};
+				if(shuff) {
+					Shuffle(); 
+				}
 			}
+		}
+	
+	// shuffle method 
+	public boolean Shuffle() {
+		
+		Collections.shuffle(Cards);
+		
+		
+		return true; 
 		}
 	
 	

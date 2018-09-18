@@ -6,27 +6,64 @@ package core;
 public class Card {
 	
 	//card # 
-	private int Numb;
+	private String Numb;
 	
 	private int Value;
 	
 	//card suit
 	private Suit Suit; 
 	
-	//Card constructor 
+	
+	
+	//Card constructor
+	
 	public Card(Suit CSuit,int CNumb ) {
 		
+		// bounds checking 
+		
+		if(CNumb > 13 || CNumb < 1) {
+			
+			System.err.println("Enter a valid card number");
+			System.exit(1);
+			
+		}
+		
+		
 		// Suit assignment 
+		
 		Suit = CSuit;
-		// Value assignment 
-		Value = CNumb;
+		
+		// Value assignment
+		
+		if(CNumb < 10) {
+		
+			Value = CNumb;}
+		
 		// Number assignment 
-		Numb = CNumb; 
+		
+		if(CNumb > 9) {
+			
+			Value = 10; 
+		}
+		if(CNumb >1||CNumb < 11) {
+			Numb = Integer.toString(CNumb); 
+			}
+		if(CNumb > 10 || CNumb <2) {
+			
+			switch(CNumb) {
+			case(1): Numb = "Ace"; break;
+			case(11): Numb = "Jack";break;
+			case(12): Numb = "Queen";break;
+			case(13): Numb = "King";break;
+			
+			}
+		} 
+		
 		
 		
 		}
 	// gets card number 
-	public int getCNum() {
+	public String getCNum() {
 			
 		return Numb; 
 		}

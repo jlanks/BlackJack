@@ -7,10 +7,12 @@ public class BlackJackTest extends TestCase{
 	//========================================
 	//TESTS FOR THE CARD CLASS 
 	//========================================
-	/*public void test_getCNum() {
+	/**/
+	/*
+	public void test_getCNum() {
 		
-		Card threeClubs = new Card(Suit.C,3);
-		assertEquals(3,threeClubs.getCNum());
+		Card threeClubs = new Card(Suit.C,1);
+		assertEquals("Ace",threeClubs.getCNum());
 		}
 
 	public void test_getSuit() {
@@ -30,14 +32,14 @@ public class BlackJackTest extends TestCase{
 	
 	public void test_toString() {
 		
-		Card threeClubs = new Card(Suit.C,3);
-		assertEquals("3 of C",threeClubs.toString()) ; 
+		Card threeClubs = new Card(Suit.C,1);
+		assertEquals("Ace of C",threeClubs.toString()) ; 
 		
 		}
 	//========================================
 	//BIG TESTS FOR THE DECK CLASS 
 	//========================================
-	*/
+	
 	public void test_ForAllCards() {
 		//Create a Deck
 		
@@ -77,7 +79,7 @@ public class BlackJackTest extends TestCase{
 	
 	//making sure Card is being assigned correct values
 	
-	/*
+	
 	public void test_CorrectCardAssignment() {
 		// i = suit      j = card number 
 		int i, j;   i=1;   j=3; 
@@ -88,7 +90,7 @@ public class BlackJackTest extends TestCase{
 		CurrentC = new Card(Suit.values()[i],j); 
 		
 		//testing assignment was a success 
-		assertEquals(3,CurrentC.getCNum());
+		assertEquals("3",CurrentC.getCNum());
 		assertEquals(Suit.H,CurrentC.getSuit());
 		
 	}
@@ -114,23 +116,39 @@ public class BlackJackTest extends TestCase{
 		CurrentC = JackBlack.getCard(50);   
 		
 		//testing to see if the first card is correct 
-		assertEquals(12,CurrentC.getCNum());
+		assertEquals("Queen",CurrentC.getCNum());
 		assertEquals(Suit.S,CurrentC.getSuit());
 		
 		}
 	
 	
-	
+	// compare shuffled deck with an in order 
+	// deck to see if they are the same. 
+	// take different indexes and compare values. 
 	*/
+	public void test_Shuffle() {
+		//non shuffled
+		Deck JackBlack = new Deck(false);
+		
+		// printing non shuffled deck
+		System.out.printf(JackBlack.getCard(0).getCardInfo());
+		//Shuffling deck
+		
+		JackBlack.Shuffle();
+		// deck is now shuffled
+		
+		
+		assertNotSame(false,JackBlack); 
+		
+		System.out.printf(JackBlack.getCard(0).getCardInfo());
+		
+			
+		}
 	
-	//public void test_Shuffle() {}
 	
 	
 	
-	/*public void test_SupportFileInput()
-	public void test_SupportConsoleInput()
-	public void test_OfferInput()
-	*/
+	
 	
 	
 	
