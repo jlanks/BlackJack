@@ -6,7 +6,9 @@ package core;
 public class Card {
 	
 	//card # 
-	private int Numb; 
+	private int Numb;
+	
+	private int Value;
 	
 	//card suit
 	private Suit Suit; 
@@ -16,13 +18,22 @@ public class Card {
 		
 		// Suit assignment 
 		Suit = CSuit;
+		// Value assignment 
+		Value = CNumb;
 		// Number assignment 
 		Numb = CNumb; 
+		
+		
 		}
 	// gets card number 
 	public int getCNum() {
 			
 		return Numb; 
+		}
+	
+	public int getValue() {
+		
+		return Value; 
 		}
 	
 	// gets card suit

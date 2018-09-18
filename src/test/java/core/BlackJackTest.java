@@ -2,11 +2,12 @@ package core;
 
 import junit.framework.TestCase;
 
+
 public class BlackJackTest extends TestCase{
 	//========================================
 	//TESTS FOR THE CARD CLASS 
 	//========================================
-	public void test_getCNum() {
+	/*public void test_getCNum() {
 		
 		Card threeClubs = new Card(Suit.C,3);
 		assertEquals(3,threeClubs.getCNum());
@@ -36,20 +37,20 @@ public class BlackJackTest extends TestCase{
 	//========================================
 	//BIG TESTS FOR THE DECK CLASS 
 	//========================================
-	/*
+	*/
 	public void test_ForAllCards() {
 		//Create a Deck
 		
 		Deck JackBlack = new Deck(false); 
 		
 		//First check if the size of the deck is correct
-		assertEquals(52,JackBlack.getSize()); 
+		assertEquals(52,JackBlack.getDeckSize()); 
 		
 		//loop that cycles through deck with checks ->
 		//to see if every card of every suit is there
 		
 		//Contains what the Current card in the deck should be
-		Card CurrentC; 
+		Card CurrentC, DeckCard; 
 		
 		// loops through suits 
 		
@@ -59,25 +60,27 @@ public class BlackJackTest extends TestCase{
 			
 			for(int i =1;i<14;i++) {
 			
-			 CurrentC = new Card(Suit.values()[j],i); 
-			 Card DeckCard = JackBlack.getTopCard(); 
+				CurrentC = new Card(Suit.values()[j],i); 
+				DeckCard = JackBlack.getTopCard(); 
 				
-			 	assertEquals(CurrentC.getCNum() ,DeckCard.getCNum()); 
+			 	assertEquals(CurrentC.getCNum(),DeckCard.getCNum()); 
 			 	assertEquals(CurrentC.getSuit() ,DeckCard.getSuit());
 			}
 		}
+		
 	}
 	
-	*/
+	
 	//========================================
 	//SMALLER TESTS FOR THE DECK CLASS 
 	//========================================
 	
 	//making sure Card is being assigned correct values
 	
+	/*
 	public void test_CorrectCardAssignment() {
 		// i = suit      j = card number 
-		int i, j;   i=0;   j=3; 
+		int i, j;   i=1;   j=3; 
 		
 		Card CurrentC; 
 		
@@ -86,11 +89,19 @@ public class BlackJackTest extends TestCase{
 		
 		//testing assignment was a success 
 		assertEquals(3,CurrentC.getCNum());
-		assertEquals(Suit.C,CurrentC.getSuit());
+		assertEquals(Suit.H,CurrentC.getSuit());
 		
 	}
 	
+	public void test_ForFullDeck() {
+		//Create a Deck
+		
+		Deck JackBlack = new Deck(false); 
+		
+		//First check if the size of the deck is correct
+		assertEquals(52,JackBlack.getDeckSize()); 
 	//testing to ensure decks are being created properly
+	}
 	
 	public void test_DeckCreation() {
 		
@@ -100,17 +111,17 @@ public class BlackJackTest extends TestCase{
 		Card CurrentC; 
 		
 		//making the 3 of clubs
-		CurrentC = JackBlack.get(0);  
+		CurrentC = JackBlack.getCard(50);   
 		
 		//testing to see if the first card is correct 
-		assertEquals(1,CurrentC.getCNum());
-		assertEquals(Suit.C,CurrentC.getSuit());
+		assertEquals(12,CurrentC.getCNum());
+		assertEquals(Suit.S,CurrentC.getSuit());
 		
 		}
 	
 	
 	
-	
+	*/
 	
 	//public void test_Shuffle() {}
 	
