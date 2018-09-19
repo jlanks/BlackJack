@@ -3,7 +3,7 @@ package core;
 
 import java.util.Collections;
 import java.util.LinkedList;
-import java.util.Random;
+
  
 
 public class Deck {
@@ -58,4 +58,10 @@ public class Deck {
 		return Cards.pop(); 
 		
 		}
+	public void printDeck() {
+		for(int i=0;i<Cards.size();i++) {
+			System.out.printf(Cards.get(i).toString()+"\n"); 
+		
+	}
+	}
 	}

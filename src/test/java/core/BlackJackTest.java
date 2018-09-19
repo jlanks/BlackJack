@@ -129,18 +129,18 @@ public class BlackJackTest extends TestCase{
 	public void test_Shuffle() {
 		//non shuffled
 		Deck JackBlack = new Deck(false);
-		
+		JackBlack.printDeck();
 		// printing non shuffled deck
-		System.out.printf(JackBlack.getCard(0).getCardInfo());
+		//System.out.printf(JackBlack.getCard(0).getCardInfo());
 		//Shuffling deck
 		
 		JackBlack.Shuffle();
 		// deck is now shuffled
-		
+		JackBlack.printDeck();
 		
 		assertNotSame(false,JackBlack); 
 		
-		System.out.printf(JackBlack.getCard(0).getCardInfo());
+		//System.out.printf(JackBlack.getCard(0).getCardInfo());
 		
 			
 		}
