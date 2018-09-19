@@ -32,6 +32,8 @@ public class Player {
 		hand.clear();
 	}
 	public Card getCard(int i) {
+
 		return hand.get(i); 
 	}
+
 }
