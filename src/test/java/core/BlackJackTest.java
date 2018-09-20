@@ -36,6 +36,14 @@ public class BlackJackTest extends TestCase{
 		assertEquals("Ace of C",threeClubs.toString()) ; 
 		
 		}
+		*/
+	public void test_Value() {
+		
+		Card threeClubs = new Card(Suit.C,6);
+		assertEquals(6,threeClubs.getValue()) ; 
+		
+		}
+		/*
 	//========================================
 	//BIG TESTS FOR THE DECK CLASS 
 	//========================================
@@ -125,7 +133,7 @@ public class BlackJackTest extends TestCase{
 	// compare shuffled deck with an in order 
 	// deck to see if they are the same. 
 	// take different indexes and compare values. 
-	*/
+	
 	public void test_Shuffle() {
 		//non shuffled
 		Deck JackBlack = new Deck(false);
@@ -146,7 +154,7 @@ public class BlackJackTest extends TestCase{
 		}
 	
 	
-	
+	*/
 	
 	
 	
