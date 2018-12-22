@@ -49,9 +49,47 @@ public class Hand {
 		int size = this.containsAce();
 		if(size == 0)
 			return null; 
-		int[] indexes = new int[size];  
-		if(size)
+		int[] indexes = new int[size]; 
+		// if theres one ace 
+		switch(size) {
+		// one ace 
+		case 1 : {
+			for(Card c: this.hand) {
+				if(c.getValue() == 1)
+					indexes[0] = this.hand.indexOf(c); 
+			}
+			
+		}
+		// two aces
+		case 2 : {
+			
+		}
+		// three aces
+		case 3 : {
+					
+		}
+		// four aces
+		case 4 : {
+			
+		}
+		// five aces
+		case 5 : {
+			
+		}
+		// six aces
+		case 6 : {
+			
+		}
+		// seven aces
+		case 7 : {
+					
+		}
+		// eight aces (max)
+		case 8 : {
+			
+		}
 		
+		}
 		
 		return indexes; 
 		
