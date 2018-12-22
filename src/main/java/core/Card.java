@@ -62,11 +62,13 @@ public class Card {
 		
 		
 		}
-	// gets card number 
+	// gets card number as string
 	public String getCNum() {
 			
 		return Numb; 
 		}
+	
+	
 	
 	public int getValue() {
 		

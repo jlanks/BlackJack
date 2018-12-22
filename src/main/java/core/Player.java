@@ -4,18 +4,38 @@ import java.util.ArrayList;
 
 public class Player {
 	
+	
+	//if the player is done hitting
+	
 	// players name 
 	private String pName; 
+	
 	// total of players cards
 	private int CurrentTotal = 0; 
+	
 	// players hand
-	private ArrayList<Card> hand = new ArrayList<Card>(); 
+	private Hand hand; 
+	
+	// booleans 
+	private boolean DoneTurn = false; 
+	private boolean DealerStatus = false;
+	
 	//one line methods and constructors 
 	
 	// constructor 
 	public Player(String Name) {
+		
 		// assigning players name
 		pName = Name;
+		// instantiating the hand 
+		hand = new Hand(); 
+		}
+	
+	public Player(String Name, boolean dealer) {
+		// assigning players name
+		pName = Name;
+		// dealer if true
+		DealerStatus = dealer;
 		}
 	
 	// name get method
@@ -25,19 +45,19 @@ public class Player {
 	}
 
 	public void deal(Card dcard) { 
-		if(hand.size() < 3) {
+		if(hand.size() < 2) {
 			hand.add(dcard);
-			System.out.printf("Delt "+ pName + " " + dcard.toString());
+			System.out.printf("Delt "+ pName + " " + dcard.toString() + "\n");
 		}
 		
-		//if() {}
-		//if(this.getSum() + dcard.getValue() == 21 &&) {
-			
-		//	hand.add(dcard);
-			//System.out.println("");
-		//}
-		 
+		
+		else if(this.hand.getSum() + dcard.getValue() == 21) {
+		
+			hand.add(dcard);
+		    System.out.println(this.pName + "has 21 pts");
 		}
+		 
+	}
 	
 	public void addCard_TEMP(Card acard) {
 		
@@ -68,40 +88,22 @@ public class Player {
 	
 	
 	public int getNumc() {
+		
 		return hand.size(); 
 	}
-	public void ClearHand() {
-		hand.clear();
-	}
-	public Card getCard(int i) {
+	
+	
+	
+	
+	
+	
+	
+	
 
-		return hand.get(i); 
-	}
-	public int getSum() {
-		int total = 0;
-		int size = hand.size(); 
-		int sizenm = 0; 
-		
-		while(size > sizenm) {
-			
-			if(hand.get(sizenm).getValue() == 1 && total + 11 <22) {
-				total += 11;
-				sizenm ++; 
-			}else if(hand.get(sizenm).getValue() == 1 && total + 11 >21) {
-				total+=1;
-				sizenm ++; 
-				 }
-			
-			total += hand.get(sizenm).getValue(); 
-			
-			//System.out.println(total);
-			sizenm ++;
-			
-			}
-		 CurrentTotal = total; 
-		 return total; 
-		}
-	}
+
+}
+
+ 
 	
 	
 	
